@@ -1,0 +1,18 @@
+Basic idea: move zeroes to front of the list, and move all twos to the end of the list
+
+Three pointers:
+- curr: for iterating through the list 
+- front: the index where the next 0 will be moved to (if found)
+- end: the index where the next 2 will be moved to (if found)
+
+If current digit is a 2, switch it with the digit at the end index and decrement end. 
+Do not increment curr as the new digit needs to be checked. 
+
+If current digit is a 0, switch with element at front index and increment front. Since
+the switched digit will either be a 0 or 1, we don't need to check it again so 
+increment curr. 
+
+If current digit is a 1, it is already in its final position or will end up being
+switched with a 0 into its final position, so increment curr and 'ignore' 1s. 
+
+Loop terminates when curr > end, since we know all digits after the end index are 2s. 
