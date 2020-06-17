@@ -1,0 +1,19 @@
+If the entire string is constructed of a repeated substring, then that substring/pattern must occur 
+at the beginning of the string. Therefore the problem can be solved by building a KMP algorithm 
+fail table.
+
+eg. abacabac
+
+The fail table will be [0,0,1,0,1,2,3,4]. The last element of the table tells us the current matching
+length relative to the start of the string (variable length_repeated). This number should be divisible 
+by the length of the pattern, which can be found by subtracting the total length of the string by 
+length_repeated. 
+
+So for abacabac: 
+- length_repeated = 4
+- length_substring = 8 - 4 = 4
+
+If instead the string was abacaba: 
+- fail table = [0,0,1,0,1,2,3] 
+- length_repeated = 3
+- length_substring = 8 - 3 = 5, which is not a divisor of 8.

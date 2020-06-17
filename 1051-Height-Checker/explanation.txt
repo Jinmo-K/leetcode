@@ -1,0 +1,3 @@
+Just need to count number of elements that are not in sorted position. To keep it O(n) time
+complexity, can first count the number of occurrences for each height, then use the counts to check
+out-of-place elements in the input array.
