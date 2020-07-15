@@ -1,0 +1,2 @@
+Starting from the end of the list, look for the last index where a number is greater than the current minimum (this will be the start of the subarray)
+Starting from the start of the list, look for the last index where a number is less than the current maximum (this will be the end of the subarray)
